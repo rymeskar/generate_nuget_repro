@@ -1,6 +1,6 @@
-This is a showcase of a pure metapackage for Microsoft.Extensions.Logging for different target frameworks.
+This is a showcase of a transparent metapackage for Microsoft.Extensions.Logging for different target frameworks.
 
-Pure metapackage is a package that includes only a dependency list.
+Transparent metapackage is a package that includes only a dependency list.
 
 We however wish to enforce the following behavior:
 * Metapackage A depends on packages P1 and P2.
@@ -22,3 +22,7 @@ Intended consumption of the package within csproj is:
 		</PackageReference>
     </ItemGroup>
 ```
+
+
+## Hassle
+P1 and P2 dependencies within SL are not marked deterministically when using dotnent pack. Pack capability (msbuild) within Visual Studio run deterministically though.
