@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>Nuget.Repro</id>
+    <version>0.0.0.2</version>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>None</description>
+    <releaseNotes>None</releaseNotes>
+  </metadata>
+  <dependencies>
+      <group targetFramework="net472">
+        <dependency id="Microsoft.Extensions.Logging.Abstractions" version="2.2.0" />
+      </group>
+      <group targetFramework="netstandard2.0">
+        <dependency id="Microsoft.Extensions.Logging.Abstractions" version="2.2.0" />
+      </group>
+      <group targetFramework="netstandard2.1">
+        <dependency id="Microsoft.Extensions.Logging.Abstractions" version="3.1.2" />
+      </group>
+    </dependencies>
+  <files>
+    <file src="build\**\*" target="build" />
+  </files>
+</package>

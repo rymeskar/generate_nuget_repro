@@ -1,0 +1,15 @@
+<Project>
+  <!--We can't use property to store regex matches because the properties would be resolved before the key TargetFramework property is populated-->
+  <ItemGroup Condition="$([System.Text.RegularExpressions.Regex]::IsMatch('$(TargetFramework)', '^(netstandard2\.0|netcoreapp2\.[0-9]+|net47[2-9]*|net48[0-9]*)$'))">
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="2.2.0" />
+  </ItemGroup>
+  <ItemGroup Condition="$([System.Text.RegularExpressions.Regex]::IsMatch('$(TargetFramework)', '^(netstandard[3-9]+\.[0-9]+|netcoreapp[3-9]+\.[0-9]+)$'))">
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="3.1.2" />
+  </ItemGroup>
+  <!--This snippet hides files added to host project-->
+  <ItemGroup>
+    <Compile Update="@(Compile)">
+      <Visible Condition="'%(NuGetItemType)' == 'Compile'">false</Visible>
+    </Compile>
+  </ItemGroup>
+</Project>
